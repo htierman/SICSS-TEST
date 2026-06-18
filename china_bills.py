@@ -32,8 +32,8 @@ def filter_china_bills(bills: Iterable[dict]) -> list[dict]:
             continue
         if not _title_mentions_china(bill.get("title")):
             continue
-        congress = int(bill.get("congress"))
-        title = str(bill.get("title"))
+        congress = bill.get("congress")
+        title = bill.get("title")
         results.append(
             {
                 "congress": congress,
