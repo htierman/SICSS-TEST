@@ -4,6 +4,7 @@ import argparse
 import csv
 import json
 import re
+import sys
 from typing import Iterable
 
 
@@ -57,7 +58,7 @@ def main() -> int:
     rows = filter_china_bills(data)
 
     writer = csv.DictWriter(
-        __import__("sys").stdout,
+        sys.stdout,
         fieldnames=["congress", "bill_type", "bill_number", "title", "label"],
     )
     writer.writeheader()
