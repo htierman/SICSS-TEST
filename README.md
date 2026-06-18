@@ -2,4 +2,18 @@
 
 
 
-This is a test, I want all bills that mention the word "china" in congressional bills, from the 107th congress to the 118th. The China label can only come from the title of the bill. It must be "China"
+This repository includes a minimal filter for congressional bills:
+
+- Congress range: 107 through 118 (inclusive)
+- Match rule: the word `china` must appear in the **bill title**
+- Label rule: matching bills are labeled exactly `China`
+
+## Usage
+
+Given a JSON array of bills with at least `congress` and `title` fields:
+
+```bash
+python /home/runner/work/SICSS-TEST/SICSS-TEST/china_bills.py /path/to/bills.json
+```
+
+The script prints matching bills as CSV with a `label` column set to `China`.
